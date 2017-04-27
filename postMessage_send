@@ -1,0 +1,28 @@
+<!DOCTYPE html>   
+<html>   
+<head>   
+<meta charset="UTF-8">   
+<title>Domain1上的发送者页面sender.html</title>   
+<script>
+function sendInfoToAnotherDomain(){   
+           
+    console.log("entering method: sendInfoToAnotherDomain()");   
+          
+var sendData={
+            "name":"deals_list",
+            "event":"deals_click",
+            "e_data":"这是发送的数据"
+        }           
+           
+    var iframe=window.frames[0];       
+    iframe.postMessage(sendData,"*");   
+             
+}  
+</script>   
+</head>   
+<body>   
+       
+<p>这个页面是HTML5跨域访问的Domain1上的页面sender.html，它将发送一些信息到Domain2上的receiver.html</p>   
+<input type="button" value="点击则发送事件到Domain2" onclick="sendInfoToAnotherDomain();"/>   <iframe width="1200" src="receiver.html"></iframe> 
+</body>   
+</html>  
