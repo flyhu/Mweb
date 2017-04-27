@@ -7,7 +7,7 @@
 <body>
 <h1>跨域交互数据-iframe</h1>
 <p>我接收到来自iframe的数据为：<span id="msg" style="color: red;"></span></p>
-<iframe src="sender.html"></iframe>
+<iframe src="postMessage_sender.html"></iframe>
 <script>
 
 window.onload =function() {
