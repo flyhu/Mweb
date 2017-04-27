@@ -1,47 +1,25 @@
-<!DOCTYPE html>   
-<html>   
-<head>   
-<meta charset="UTF-8">   
-<title>Domain2上的接收者页面receiver.html</title>   
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>跨域交互数据-iframe</title>
+</head>
+<body>
+<h1>跨域交互数据-iframe</h1>
+<p>我接收到来自iframe的数据为：<span id="msg" style="color: red;"></span></p>
+<iframe src="sender.html"></iframe>
 <script>
-//这个函数用于处理从Domain1上的sender发送过来的信息，然后将他们打印出来   
-function receiveInfoFromAnotherDomain(){   
-           
-    console.log("entering method receiveInfoFromAnotherDomain()");   
-  
-    window.addEventListener("message",function(ev){   
-               
-        //如果不是来自指定Domain的，则忽略   
-        //if(ev.origin !="http://localhost:8080"){   
-         //   console.log("the event doesn't come from Domain1!");   
-         //  return;   
-       // }   
-               
 
-        console.log(ev.data);   
-  
-       var data = event.data;
-        var InfoString="从域为： "+ev.origin+"那里传来的数据."+"<br>";   
-        InfoString+="姓名是: "+data.name+"<br>";   
-        InfoString+="event为：  "+data.event+"<br>";   
-        InfoString+="e_data为：  "+data.e_data+"<br>";   
-        document.body.innerHTML=InfoString;   
-                       
-        }   
-               
-    );   
-       
-       
-       
-       
-}  
-</script>   
-</head>   
-<body onload="receiveInfoFromAnotherDomain();">   
-       
-       
-<p>这个页面是HTML5跨域访问的Domain2上的页面receiver.html，它会处理来自Domain1上sender.html发送的页面</p>   
-       
-       
-</body>   
-</html>  
+window.onload =function() {
+    /*向目标源发送数据*/
+    window.frames[0].postMessage('收到请回！',"*");
+    /*监听有没有返回过来的数据*/
+    window.addEventListener('message',function(e) {
+        console.log(e);
+        document.getElementById('msg').innerHTML = e.data;
+    })
+};
+
+</script>
+</body>
+</html>
