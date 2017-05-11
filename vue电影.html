@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>爱电影</title>
+    <link href="css/materialize.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <script>
+    //假设设计稿750*1334, 1rem=100px;
+    document.documentElement.style.fonsize = document.documentElement.clientWidth/750*100+'px'
+    </script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="slider">
+    <ul id="nav" class="side-nav">
+        <li>
+            <div class="userView">
+                <div class="background">
+                    <img src="http://ww1.sinaimg.cn/large/6aedb651gy1ff4ryi4hwlj20xc0zg7dt.jpg">
+                </div>
+                <div><img class="circle"
+                          src="http://tva3.sinaimg.cn/crop.0.0.996.996.180/6aedb651jw8f7nnmybnooj20ro0rowh6.jpg"></div>
+                <div><span class="white-text name"><i class="fa fa-envelope-o"></i><a href="Mailto:saboranin@gmail.com"><span
+                        style="color: white">saboranmin@gmail.com</span></a></span></div>
+            </div>
+        </li>
+        <!--<li><a class="waves-effect" href="#!">带波纹效果的第三链接</a></li>-->
+        <li>
+            <div class="collection">
+                <a href="#modal1" class="collection-item waves-effect " style="color: #26C6DA;">关于爱电影</a>
+                <a href="#modal2" class="collection-item waves-effect " style="color: #26C6DA;">致谢</a>
+            </div>
+        </li>
+    </ul>
+
+    <!--模态1关于我们-->
+    <div id="modal1" class="modal bottom-sheet" style="z-index: 1003; display: none; opacity: 0; bottom: -100%;">
+        <div class="modal-content">
+            <h5>声明</h5>
+            <ul class="collection">
+                <li class="collection-item avatar">
+                    <img src="http://tva3.sinaimg.cn/crop.0.0.996.996.180/6aedb651jw8f7nnmybnooj20ro0rowh6.jpg" alt=""
+                         class="circle">
+                    <p>本站为本人学习新技术的附加产物，没有进行任何运营、推广以及盈利运作。</p>
+                </li>
+                <li class="collection-item avatar">
+                    <img src="http://tva3.sinaimg.cn/crop.0.0.996.996.180/6aedb651jw8f7nnmybnooj20ro0rowh6.jpg" alt=""
+                         class="circle">
+                    <p>本站所有视频资源均抓取自第三方视频网站，如有任何侵权行为请及时联系上方邮箱告知，本人会立即删除相关资源。</p>
+                </li>
+                <li class="collection-item avatar">
+                    <img src="http://tva3.sinaimg.cn/crop.0.0.996.996.180/6aedb651jw8f7nnmybnooj20ro0rowh6.jpg" alt=""
+                         class="circle">
+                    <p>本站所有视频资源均来自互联网，仅提供相关预览，请各位同学支持正版，禁止下载本站资源传播，本站亦不承担任何法律责任。</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal2" class="modal bottom-sheet" style="z-index: 1003; display: none; opacity: 0; bottom: -100%;">
+        <div class="modal-content">
+            <h5>感谢以下开源项目</h5>
+            <div class="collection">
+                <p class="collection-item"><a href="https://github.com/guzzle/guzzle">Guzzle, PHP HTTP client</a></p>
+                <p class="collection-item"><a href="https://github.com/vuejs/vue"><img
+                        src="http://cn.vuejs.org/images/logo.png" style="height:5vh;" alt=""></a></p>
+                <p class="collection-item"><a href="https://github.com/laravel/laravel"><img style="height:5vh;"
+                                                                                             src="https://camo.githubusercontent.com/5ceadc94fd40688144b193fd8ece2b805d79ca9b/68747470733a2f2f6c61726176656c2e636f6d2f6173736574732f696d672f636f6d706f6e656e74732f6c6f676f2d6c61726176656c2e737667"
+                                                                                             alt=""></a></p>
+                <p class="collection-item"><a href="https://github.com/Dogfalo/materialize"><img style="height:5vh;"
+                                                                                                 src="https://camo.githubusercontent.com/4649c8978620e21388d1170b30a9f355d80ae713/68747470733a2f2f7261772e6769746875622e636f6d2f646f6766616c6f2f6d6174657269616c697a652f6d61737465722f696d616765732f6d6174657269616c697a652e676966"
+                                                                                                 alt=""></a></p>
+                <p class="collection-item"><a href="https://cloud.google.com/"><img style="height:5vh;"
+                                                                                    src="images/gcp-logo.svg"
+                                                                                    style="width: 100%;" alt=""></a></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--右边搜索-->
+    <!--<ul id="search" class="side-nav">-->
+    <!--<form name="q" onsubmit="return search()">-->
+    <!--<div class="row">-->
+    <!--<div class="input-field col s10">-->
+    <!--<input id="input_text" type="text" name=q length="10">-->
+    <!--<label for="input_text">输入关键词</label>-->
+    <!--</div>-->
+    <!--<div class="col s10">-->
+    <!--<button class="waves-effect waves-light cyan lighten-1 btn" @click="search()">搜索</button>-->
+    <!--</div>-->
+    <!--</form>-->
+
+    <!--</ul>-->
+</div>
+<!-- header -->
+<div class="navbar-fixed">
+    <nav class="header row  cyan lighten-1" style="text-align:center;font-size:1.5rem;">
+        <div class="col s2 ">
+            <div data-activates="nav" class="nav">
+                <i class="fa fa-navicon "></i>
+            </div>
+        </div>
+        <div class="col s8">
+            <span><a href="/">愛<i class="fa fa-heartbeat" style="font-size: 1rem;margin-left:1vw;margin-right:1vw;"></i>电影</a></span>
+        </div>
+        <div class="col s2 ">
+
+        </div>
+
+
+    </nav>
+
+</div>
+
+<!-- header结束 -->
+
+<!--header下方搜素-->
+
+<div class="row">
+    <form name="q" onsubmit="return search()">
+
+        <div class="col s12 m12 l12 card">
+            <div class="input-field col s9 m9 l9">
+                <input id="q" name="q" type="text">
+                <label for="q">关键词</label>
+            </div>
+            <div class="input-field col s3 m3 l3" style="text-align: center">
+                <button class="waves-effect waves-light cyan lighten-1 btn"><i
+                        class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--header下方搜素结束-->
+<!-- 内容 -->
+<div class="content" v-cloak>
+    <div v-if="isLoading" style="text-align: center">
+        <div class="preloader-wrapper small active">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6 m3 l2" v-for="film in films">
+            <div class="card" @click="toDetial(film.id)">
+                <div class="card-image">
+                    <img :src="film.cover" style="height:260px">
+                </div>
+                <div class="card-action" style="text-align: center;">
+                    <span class="truncate">{{film.title}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 内容结束 -->
+<!-- footer -->
+<!-- footer结束 -->
+</div>
+
+
+<script src="script/jquery.js"></script>
+<script src="script/materialize.js"></script>
+<script src="script/vue.js"></script>
+<script src="script/init.js"></script>
+<script>
+
+    $(".nav").sideNav();
+    var vm = new Vue({
+        el: '.content',
+        data: {
+            films: [],
+            isLoading: false
+        },
+        created: function () {
+            var that = this;
+            that.films = JSON.parse(localStorage.getItem('films'));
+        },
+        methods: {
+            toDetial: function (id) {
+                localStorage.setItem('id', id);
+                location.href = './play.html?id=' + id;
+            }
+        }
+    })
+
+    function search() {
+        vm.films = []
+        vm.isLoading = true
+
+        $.get(app.baseUrl + 'search?q=' + q.q.value, function (data) {
+            if (data.data != false) {
+                vm.isLoading = false
+                vm.films = data.data
+                localStorage.setItem('films', JSON.stringify(data.data))
+            } else {
+                vm.isLoading = false
+                Materialize.toast('对不起，没有搜索结果，请换其他关键词尝试', 3000)
+            }
+        });
+        return false;
+    }
+
+
+    $(document).ready(function () {
+        $('.modal').modal();
+    });
+</script>
+</body>
+</html>
