@@ -80,10 +80,10 @@ import data from './assets/json/data.json';
                 console.log("右滑");
             }
             else if (Math.abs(endPos.y) > Math.abs(endPos.x) && endPos.y > 0) {
-                console.log("上滑");
+                console.log("下滑");
             }
             else if (Math.abs(endPos.y) > Math.abs(endPos.x) &&  endPos.y < 0) {
-                console.log("下滑");
+                console.log("上滑");
             }
             else{
                 console.log("touch");
